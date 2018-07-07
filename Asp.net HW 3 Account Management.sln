@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Account Management", "Account Management\Account Management.csproj", "{9DE27C0C-67BE-499E-B190-70C17049CF90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserRepositoryLib", "UserRepository\UserRepositoryLib.csproj", "{28BFFDC1-6B5B-4C44-ADEE-106B4D7C567F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DE27C0C-67BE-499E-B190-70C17049CF90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DE27C0C-67BE-499E-B190-70C17049CF90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DE27C0C-67BE-499E-B190-70C17049CF90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DE27C0C-67BE-499E-B190-70C17049CF90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28BFFDC1-6B5B-4C44-ADEE-106B4D7C567F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28BFFDC1-6B5B-4C44-ADEE-106B4D7C567F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28BFFDC1-6B5B-4C44-ADEE-106B4D7C567F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28BFFDC1-6B5B-4C44-ADEE-106B4D7C567F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A4489D1-7934-43C4-AF93-DAD708A10D17}
+	EndGlobalSection
+EndGlobal

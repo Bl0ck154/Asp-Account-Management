@@ -1,0 +1,49 @@
+﻿@using UserRepositoryLib;
+@{
+    Layout = null;
+	User user = ViewBag.User == null ? new UserRepositoryLib.User() : ViewBag.User;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create/Edit</title>
+</head>
+<body>
+	<div>
+		@if (user.Id == null)
+		{
+			<h2>Create</h2>
+		}
+		else
+		{
+			<h2>Edit</h2>
+		}
+
+		@using (Html.BeginForm((user.Id == null) ? "Create" : "Edit"))
+		{
+			<input type="hidden" name="id" value="@user.Id" />
+			<label for="fname">First name: *</label><br />
+			<input type="text" name="firstname" value="@user.FirstName" /><br />
+			<label for="lname">Last name:</label><br />
+			<input type="text" name="lastname" value="@user.LastName" /><br />
+			<label for="login">Login: *(min 5 chars)</label><br />
+			<input type="text" name="login" value="@user.Login" /><br />
+			<label for="password">Password: *(min 6 chars)</label><br />
+			<input type="password" name="password" value="@user.Password" /><br />
+			<label for="email">Email: *</label><br />
+			<input type="text" name="email" value="@user.Email" /><br />
+			<label for="phone">Phone:</label><br />
+			<input type="text" name="phone" value="@user.Phone" /><br />
+			<label for="role">Role:</label> @Html.ActionLink("Edit roles","Index","Role") <br />
+			@Html.DropDownList("RoleId")
+			<br /><br />
+			<input type="submit" value="Submit" />
+		}
+	</div>
+	<br />
+	@Html.ActionLink("Index page", "Index")
+</body>
+</html>

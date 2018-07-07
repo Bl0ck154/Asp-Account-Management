@@ -1,0 +1,41 @@
+﻿@using UserRepositoryLib;
+@using System.Reflection;
+@{
+	Layout = null;
+	User user = ViewBag.User;
+	RoleRepository roles = ViewBag.Roles;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Remove</title>
+</head>
+<body>
+	<div>
+		<h2>Confirm user deletion: </h2>
+		@using (Html.BeginForm())
+		{
+			<input type="hidden" name="id" value="@user.Id" />
+			foreach (PropertyInfo propInfo in typeof(User).GetProperties())
+			{
+				@propInfo.Name
+				<label> : </label>
+				if (propInfo.Name == "RoleId")
+				{
+					<label>@roles.GetById(Convert.ToInt32(propInfo.GetValue(user))).Name</label>
+				}
+				else
+				{
+					<label>@propInfo.GetValue(user)</label>
+				}<br />
+			}
+			<input type="submit" value="Delete" />
+		}
+	</div>
+	<br />
+	@Html.ActionLink("Index page", "Index")
+</body>
+</html>

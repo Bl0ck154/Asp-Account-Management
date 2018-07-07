@@ -1,0 +1,37 @@
+﻿@using UserRepositoryLib;
+@{
+	Layout = null;
+	Role role = ViewBag.Role == null ? new UserRepositoryLib.Role() : ViewBag.Role;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Create/Edit role</title>
+</head>
+<body>
+	<div>
+		@if (role.Id == null)
+		{
+			<h2>Create role</h2>
+		}
+		else
+		{
+			<h2>Edit role</h2>
+		}
+
+		@using (Html.BeginForm((role.Id == null) ? "Create" : "Edit"))
+		{
+			<input type="hidden" name="id" value="@role.Id" />
+			<label for="name">Role name:</label><br />
+			<input type="text" name="name" value="@role.Name" /><br />
+
+			<input type="submit" value="Submit" />
+		}
+	</div>
+	<br />
+	@Html.ActionLink("Role list page", "Index")
+</body>
+</html>

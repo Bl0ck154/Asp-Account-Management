@@ -1,0 +1,29 @@
+﻿@using UserRepositoryLib;
+@{
+	Layout = null;
+	string err = ViewBag.Error;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Roles list</title>
+</head>
+<body>
+	Roles list:
+	<div>
+		<ul>
+			@foreach (var role in TempData["Roles"] as IEnumerable<Role>)
+			{
+				<li><a href="@Url.Action("Edit", new { id = role.Id })">@role</a> | <a href="@Url.Action("Remove", new { id = role.Id })">Remove</a></li>
+			}
+		</ul>
+	</div>
+	@err
+	<br />
+	<a href="~/Role/Create">Create new role</a><br /><br />
+	@Html.ActionLink("<- Back to users list", "Index", "Account")
+</body>
+</html>

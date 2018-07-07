@@ -1,0 +1,27 @@
+﻿@using UserRepositoryLib;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+	Users list:
+	<div>
+		<ul>
+			@foreach (var user in TempData["Users"] as IEnumerable<User>)
+			{
+				<li><a href="@Url.Action("Edit", new { id = user.Id })">@user</a> | <a href="@Url.Action("Remove", new { id = user.Id })">Remove</a></li>
+			}
+		</ul>
+	</div>
+	<br />
+	<a href="~/Account/Create">Create new user</a><br /><br />
+	@Html.ActionLink("Roles list", "Index", "Role")
+</body>
+</html>
